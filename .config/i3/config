@@ -215,6 +215,7 @@ bindsym $mod+p exec --no-startup-id mpc toggle
 bindsym $mod+Shift+s exec --no-startup-id i3-sensible-terminal -e htop
 
 # Scripts
+bindsym $mod+Print exec --no-startup-id maimpick
 bindsym $mod+F9 exec --no-startup-id mounter
 bindsym $mod+F10 exec --no-startup-id unmounter
 bindsym $mod+BackSpace exec --no-startup-id sysact
