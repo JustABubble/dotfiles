@@ -219,3 +219,6 @@ bindsym $mod+Print exec --no-startup-id maimpick
 bindsym $mod+F9 exec --no-startup-id mounter
 bindsym $mod+F10 exec --no-startup-id unmounter
 bindsym $mod+BackSpace exec --no-startup-id sysact
+
+# Suspend
+bindsym $mod+Shift+period exec --no-startup-id systemctl suspend
