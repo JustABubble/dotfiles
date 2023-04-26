@@ -30,6 +30,8 @@ return require('packer').startup(function(use)
 	  end
   })
 
+  use({'ellisonleao/gruvbox.nvim'})
+
   use({
       "folke/trouble.nvim",
       config = function()
