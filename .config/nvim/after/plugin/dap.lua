@@ -1,7 +1,7 @@
 require("mason-nvim-dap").setup({
     ensure_installed = {
         'codelldb',
-        'coreclr'
+        'coreclr',
     },
 })
 
@@ -121,3 +121,5 @@ vim.keymap.set("n", "<leader>;", require('dap').step_over)
 vim.keymap.set("n", "<leader>b", require('dap').toggle_breakpoint)
 
 vim.keymap.set("n", "<leader>D", require('dapui').toggle)
+
+vim.keymap.set({ "n", "v" }, "<leader>e", require('dapui').eval)
