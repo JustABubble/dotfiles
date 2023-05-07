@@ -8,15 +8,19 @@
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export PATH="$PATH:${$(find ~/.local/share/cargo/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:${$(find ~/.local/share/go/bin -type d -printf %p:)%%:}"
 export PATH="$PATH:${$(find ~/.dotnet/tools -type d -printf %p:)%%:}"
+
+export PATH=$PATH:/home/matthew/.local/share/spicetify
 
 unsetopt PROMPT_SP
 
 # Default programs:
 export EDITOR="nvim"
-export TERMINAL="st"
-export TERMINAL_PROG="st"
+export TERMINAL="alacritty"
+export TERMINAL_PROG="alacritty"
 export BROWSER="firefox"
+export MANPAGER='nvim +Man!'
 
 # Change the default crypto/weather monitor sites.
 # export CRYPTOURL="rate.sx"
@@ -72,7 +76,10 @@ export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
 [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ] && setsid shortcuts >/dev/null 2>&1
 
 # Start graphical server on user's current tty if not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
+# [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    dbus-launch --exit-with-session sway
+fi
 
 # Switch escape and caps if tty and no passwd required:
 sudo -n loadkeys ${XDG_DATA_HOME:-$HOME/.local/share}/larbs/ttymaps.kmap 2>/dev/null
