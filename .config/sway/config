@@ -24,6 +24,10 @@ set $term alacritty
 set $menu dmenu_path | fzfmenu | xargs swaymsg exec --
 for_window [app_id="fzfmenu"] floating enabled
 
+for_window [app_id="one.alynx.showmethekey" title="Floating Window - Show Me The Key"] {
+  floating enable
+  sticky enable
+}
 
 # GET DEM BORDERS OUT OF HEREc:w
 #
@@ -35,7 +39,7 @@ for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output "*" bg ~/Pictures/Wallpapers/nazar-synytsia-BbIaHb47H04-unsplash.jpg fill
+output "*" bg ~/.local/share/bg fill
 #
 # Example configuration:
 #
