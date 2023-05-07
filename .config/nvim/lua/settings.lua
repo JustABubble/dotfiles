@@ -5,12 +5,15 @@ vim.opt.relativenumber = true
 
 vim.opt.laststatus = 0
 
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "80"
 
@@ -48,12 +51,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = "*",
     callback = function()
         local cursorPos = vim.fn.getpos(".")
-        vim.cmd[[%s/\s\+$//e]]
-        vim.cmd[[%s/\n\+%$//e]]
+        vim.cmd [[%s/\s\+$//e]]
+        vim.cmd [[%s/\n\+%$//e]]
         vim.fn.cursor(cursorPos[2], cursorPos[3])
     end,
 })
@@ -64,7 +67,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    pattern = {"*.xaml", "*.axaml"},
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = { "*.xaml", "*.axaml" },
     command = [[setlocal filetype=xml]]
 })
