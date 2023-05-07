@@ -32,3 +32,4 @@ fi
 # xwallpaper --zoom "$bgloc"
 # If running, dwm hit the key to refresh the color scheme.
 # pidof dwm >/dev/null && xdotool key super+F5
+pidof sway >/dev/null && swaymsg output "*" bg "$bgloc" fill
