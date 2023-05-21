@@ -222,7 +222,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command i3status
+    status_command i3status-rs ~/.config/sway/status.toml
 
     # colors {
     #     statusline #b8b9b4
@@ -232,6 +232,7 @@ bar {
 }
 
 # Auto start
+exec --no-startup-id mako
 exec --no-startup-id pipewire
 exec --no-startup-id mpd
 
@@ -256,3 +257,8 @@ bindsym XF86Search exec $menu
 
 bindsym $mod+F4 exec $term -e pulsemixer
 bindsym $mod+Shift+r exec $term -e htop
+bindsym $mod+m exec $term -e ncmpcpp
+
+bindsym $mod+F9 exec mounter
+bindsym $mod+F10 exec unmounter
+bindsym $mod+Backspace exec sysact

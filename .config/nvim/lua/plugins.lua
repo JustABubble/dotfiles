@@ -25,12 +25,7 @@ return require('packer').startup(function(use)
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
     })
-
-    use({ 'ellisonleao/gruvbox.nvim' })
 
     use({
         "folke/trouble.nvim",
@@ -46,12 +41,14 @@ return require('packer').startup(function(use)
 
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("nvim-treesitter/nvim-treesitter-context");
     use("theprimeagen/harpoon")
     use("theprimeagen/refactoring.nvim")
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
     use("tpope/vim-commentary")
-    use("nvim-treesitter/nvim-treesitter-context");
+    use("nvim-lualine/lualine.nvim")
+    use("j-hui/fidget.nvim")
 
     use {
         'VonHeikemen/lsp-zero.nvim',
