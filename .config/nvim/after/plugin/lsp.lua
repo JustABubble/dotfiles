@@ -53,19 +53,13 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vds", require("telescope.builtin").lsp_document_symbols, opts)
     -- vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
     -- vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-
-    vim.api.nvim_create_autocmd("BufWritePre", {
-        group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
-        pattern = "*",
-        desc = "Run LSP formatting on a file on save",
-        callback = function()
-            if vim.lsp.buf.format then
-                vim.lsp.buf.format()
-            elseif vim.lsp.buf.formatting then
-                vim.lsp.buf.formatting()
-            end
-        end,
-    })
+    vim.keymap.set("n", "<leader>vf", function()
+        if vim.lsp.buf.format then
+            vim.lsp.buf.format()
+        elseif vim.lsp.buf.formatting then
+            vim.lsp.buf.formatting()
+        end
+    end, opts)
 end)
 
 lsp.setup()

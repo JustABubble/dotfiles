@@ -66,7 +66,6 @@ vim.api.nvim_create_autocmd('FileType', {
     command = [[setlocal formatoptions-=o formatoptions-=r formatoptions-=c]],
 })
 
-
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "*.xaml", "*.axaml" },
     command = [[setlocal filetype=xml]]

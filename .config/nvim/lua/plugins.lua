@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
         as = 'rose-pine',
     })
 
+    use("folke/tokyonight.nvim")
+
     use({
         "folke/trouble.nvim",
         config = function()
@@ -42,6 +44,7 @@ return require('packer').startup(function(use)
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use("nvim-treesitter/nvim-treesitter-context");
+    use("nvim-treesitter/playground")
     use("theprimeagen/harpoon")
     use("theprimeagen/refactoring.nvim")
     use("mbbill/undotree")
@@ -78,6 +81,7 @@ return require('packer').startup(function(use)
     use("jay-babu/mason-nvim-dap.nvim")
     use("rcarriga/nvim-dap-ui")
 
+    use("github/copilot.vim")
     use("folke/zen-mode.nvim")
     use("eandrju/cellular-automaton.nvim")
 
