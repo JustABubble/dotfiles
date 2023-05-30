@@ -81,7 +81,11 @@ return require('packer').startup(function(use)
     use("jay-babu/mason-nvim-dap.nvim")
     use("rcarriga/nvim-dap-ui")
 
-    use("github/copilot.vim")
+    use("zbirenbaum/copilot.lua")
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+    }
     use("folke/zen-mode.nvim")
     use("eandrju/cellular-automaton.nvim")
 
