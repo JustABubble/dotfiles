@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/rose-pine.yml
+  - ~/.config/alacritty/themes/tokyonight.yml
 
 font:
   normal:
