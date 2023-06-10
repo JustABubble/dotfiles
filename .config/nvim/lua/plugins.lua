@@ -27,6 +27,11 @@ return require('packer').startup(function(use)
         as = 'rose-pine',
     })
 
+    use({
+        "mcchrish/zenbones.nvim",
+        requires = "rktjmp/lush.nvim"
+    })
+
     use("folke/tokyonight.nvim")
 
     use({
@@ -81,11 +86,7 @@ return require('packer').startup(function(use)
     use("jay-babu/mason-nvim-dap.nvim")
     use("rcarriga/nvim-dap-ui")
 
-    use("zbirenbaum/copilot.lua")
-    use {
-        "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua" },
-    }
+    use("github/copilot.vim")
     use("folke/zen-mode.nvim")
     use("eandrju/cellular-automaton.nvim")
 
